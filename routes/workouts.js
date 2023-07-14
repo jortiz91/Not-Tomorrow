@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
   res.json({ mssg: 'DELETE one workout' })
 })
-//update
+//update one workout
 router.put('/:id', (req, res) => {
   res.json({ mssg: 'UPDATE one workout' })
 })
