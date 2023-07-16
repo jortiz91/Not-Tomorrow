@@ -5,15 +5,28 @@ import SearchExercises from '../components/SearchExercises'
 import Exercises from '../components/Exercises'
 
 const Home = () => {
+  const [workouts, setWorkouts] = useState(null)
+
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch('/api/workouts')
+
+      const json = await response.json()
+      console.log(json)
+
+      if (response.ok) {
+        setWorkouts(json)
+      }
     }
     fetchWorkouts()
   }, [])
+
   return (
-    <div className="Home">
-      <h2>Home</h2>
+    <div className="home">
+      <div className="workouts">
+        {workouts &&
+          workouts.map((workout) => <p key={workout._id}>{workout.title}</p>)}
+      </div>
     </div>
   )
 }

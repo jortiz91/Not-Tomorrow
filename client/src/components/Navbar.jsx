@@ -7,14 +7,11 @@ import { red } from '@mui/material/colors'
 const Navbar = () => {
   return (
     <header>
-      <div className="header"></div>
-      <Link to="/">
-        <img
-          src={Logo}
-          alt="logo"
-          style={{ width: '72px', height: '72px', margin: '0 20px' }}
-        />
-      </Link>
+      <div className="container">
+        <Link to="/">
+          <h1>Workout Body</h1>
+        </Link>
+      </div>
     </header>
   )
 }
