@@ -26,7 +26,7 @@ const createWorkout = async (req, res) => {
 
   try {
     const workout = await Workout.create({ title, load, reps })
-    res.status(200).json({ workout })
+    res.status(200).json(workout)
   } catch (e) {
     res.status(404).json({ e: e.message })
   }
