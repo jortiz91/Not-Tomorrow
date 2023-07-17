@@ -14,12 +14,13 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: 'DELETE_WORKOUT', payload: json })
     }
   }
+
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
       <p>
-        <strong>Load (lb): </strong>
-        {workout.load}
+        <strong>Weight (lb): </strong>
+        {workout.weight}
       </p>
       <p>
         <strong>Reps: </strong>

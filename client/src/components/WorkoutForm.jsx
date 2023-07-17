@@ -4,14 +4,14 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext()
   const [title, setTitle] = useState('')
-  const [load, setLoad] = useState('')
+  const [weight, setWeight] = useState('')
   const [reps, setReps] = useState('')
   const [e, setError] = useState(null)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    const workout = { title, load, reps }
+    const workout = { title, weight, reps }
 
     const response = await fetch('/api/workouts', {
       method: 'POST',
@@ -26,7 +26,7 @@ const WorkoutForm = () => {
     }
     if (response.ok) {
       setTitle('')
-      setLoad('')
+      setWeight('')
       setReps('')
       setError(null)
       console.log('Workout created successfully!', json)
@@ -37,17 +37,17 @@ const WorkoutForm = () => {
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h3>Create a new Workout</h3>
-      <label>Exercise Title:</label>
+      <label>Name of Exercise:</label>
       <input
         type="text"
         onChange={(event) => setTitle(event.target.value)}
         value={title}
       />
-      <label>Load (in lb):</label>
+      <label>Weight (in lb):</label>
       <input
         type="number"
-        onChange={(event) => setLoad(event.target.value)}
-        value={load}
+        onChange={(event) => setWeight(event.target.value)}
+        value={weight}
       />
       <label>Reps:</label>
       <input
