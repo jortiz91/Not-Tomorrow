@@ -7,6 +7,7 @@ body {
   margin: 0;
   font-family: "Poppins";
 
+
 }
 header {
   background: #53b87b;
@@ -74,11 +75,12 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-form button {
-  background: var(--primary);
-  border: 0;
-  color: #fff;
-  padding: 10px;
+form button:hover{
+  
+  border: 2px solid ;
+  color: rgb(23, 207, 100);
+  background-color: rgb(255, 255, 255);
+  transition: 0.2s;
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
@@ -92,3 +94,12 @@ div.error {
   margin: 20px 0;
 }
 
+button {
+  padding: 10px;
+  border: 0;
+  background: #53b87b;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "dancing script";
+}
