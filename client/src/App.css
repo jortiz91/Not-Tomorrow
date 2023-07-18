@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    -webkit-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bounce {
+  width:20px;
+  height: 20px;
+  margin: 0 auto;
+  background: black;
+  border-radius: 50%;
+  animation: bounce 0.2s cubic-bezier(.19, .57, .3, .98) infinite alternate;
+  margin-right: -100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes bounce {
   from {
-    transform: rotate(0deg);
+    transform: translateY(0px);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-20px);
   }
 }
+
+.wow {
+  font-size: 3em;
+  display: inline-block;
+  letter-spacing: 0.1em;
+
+  border-right: solid 3px #333;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: type 4s steps(20) 1s infinite,
+  blink 0.5s steps(1) infinite;
+  
+}
+@keyframes type {
+  to {
+    width: 21ch }
+  }
+  @keyframes blink {
+    from {border-color: transparent}
+    50% {border-color: transparent}
+    to {border-color: transparent}
+  }
+

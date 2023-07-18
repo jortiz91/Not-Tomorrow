@@ -5,10 +5,11 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <h1>
+          <h1 className="wow">
             Train Today,
             <br /> Not Tomorrow
           </h1>
+          <div className="bounce"></div>
         </Link>
       </div>
     </header>

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import logo from './images/1.png'
 
 import './App.css'
 import Home from './pages/Home'
@@ -10,6 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <div className="pages">
+          <img src={logo} alt="" />
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
