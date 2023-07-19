@@ -18,6 +18,11 @@ const Navbar = () => {
           </h1>
           <div className="bounce"></div>
         </Link>
+        <div>
+          <Link to="/">
+            <h1>Nutrition</h1>
+          </Link>
+        </div>
         <nav>
           {user && (
             <div>
