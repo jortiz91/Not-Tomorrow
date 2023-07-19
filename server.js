@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
+const nutrition = require('./routes/nutrition')
 // express app
 const app = express()
 //middleware
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
   next()
 })
 //routes
+app.use('/api/nutrition', nutrition)
 app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
 //connect to db
