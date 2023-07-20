@@ -19,7 +19,7 @@ const Navbar = () => {
           <div className="bounce"></div>
         </Link>
         <div>
-          <Link to="/">
+          <Link to="/nutrition">
             <h1>Nutrition</h1>
           </Link>
         </div>

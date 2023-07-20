@@ -29,7 +29,7 @@ const App = () => {
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/'" />}
             />
-            <Route path="/" element={<Home />} />
+            <Route path="/nutrition" element={<Home />} />
           </Routes>
         </div>
       </BrowserRouter>
