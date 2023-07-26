@@ -3,7 +3,7 @@ import { useWorkoutsContext } from './useWorkoutsContext'
 
 export const useLogout = () => {
   const { dispatch } = useAuthContext()
-  const { dispatch: workoutsDis } = useWorkoutsContext()
+  const { workoutdispatch: workoutsDis } = useWorkoutsContext()
 
   const logout = () => {
     localStorage.removeItem('user')

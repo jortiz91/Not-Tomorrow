@@ -3,7 +3,7 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const WorkoutForm = () => {
-  const { dispatch } = useWorkoutsContext()
+  const { workoutdispatch } = useWorkoutsContext()
   const { user } = useAuthContext()
   const [title, setTitle] = useState('')
   const [weight, setWeight] = useState('')
@@ -37,7 +37,7 @@ const WorkoutForm = () => {
       setReps('')
       setError(null)
       console.log('Workout created successfully!', json)
-      dispatch({ type: 'CREATE_WORKOUT', payload: json })
+      workoutdispatch({ type: 'CREATE_WORKOUT', payload: json })
     }
   }
 

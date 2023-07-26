@@ -1,12 +1,27 @@
 const Nutrition = require('../models/nutritionModel')
+const Comment = require('../models/commentModel')
+const User = require('../models/userModel')
 const mongoose = require('mongoose')
 
 //get all nutrition
 
 const getNutritions = async (req, res) => {
-  const nutritions = await Nutrition.find({}).sort({ createdAt: -1 })
+  const nutritions = await Nutrition.find({})
+    .populate('comments')
+    .sort({ createdAt: -1 })
 
   res.status(200).json(nutritions)
+}
+const makeComment = async (req, res) => {
+  const nutrition = await Nutrition.findById(req.params.id)
+  const user = await User.findOne({ email: req.body.userEmail })
+
+  const comment = await Comment.create({ ...req.body, user: user._id })
+  nutrition.comments.push(comment._id)
+  nutrition.save()
+  user.comments.push(comment._id)
+  user.save()
+  res.send(comment)
 }
 
 //get a single nutrition
@@ -78,5 +93,6 @@ module.exports = {
   getNutrition,
   createNutrition,
   deleteNutrition,
-  updateNutrition
+  updateNutrition,
+  makeComment
 }

@@ -2,7 +2,7 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const WorkoutDetails = ({ workout }) => {
-  const { dispatch } = useWorkoutsContext()
+  const { workoutdispatch } = useWorkoutsContext()
   const { user } = useAuthContext()
 
   const handleClick = async () => {
@@ -19,7 +19,7 @@ const WorkoutDetails = ({ workout }) => {
     const json = await response.json()
 
     if (response.ok) {
-      dispatch({ type: 'DELETE_WORKOUT', payload: json })
+      workoutdispatch({ type: 'DELETE_WORKOUT', payload: json })
     }
   }
 

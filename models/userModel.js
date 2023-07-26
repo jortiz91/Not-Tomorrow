@@ -12,7 +12,13 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ]
 })
 
 //S-UP
@@ -32,7 +38,7 @@ userSchema.statics.signup = async function (email, password) {
   if (exists) {
     throw Error('Email Exist')
   }
-  const salt = await bcrypt.genSalt(11)
+  const salt = await bcrypt.genSalt(12)
   const hash = await bcrypt.hash(password, salt)
 
   const user = await this.create({ email, password: hash })

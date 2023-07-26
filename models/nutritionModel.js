@@ -8,13 +8,12 @@ const nutritionSchema = new Schema(
       required: true
     },
     calories: {
-      type: Number,
-      required: true
+      type: Number
     },
     protein: {
-      type: Number,
-      required: true
-    }
+      type: Number
+    },
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
   },
   { timestamps: true }
 )
